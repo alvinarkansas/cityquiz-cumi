@@ -13,7 +13,3 @@ export const SET_CITY_IDX = (data) => {
 export const SET_PLACED_CITIES = (data) => {
     return { type: 'SET_PLACED_CITIES', payload: data }
 }
-
-export const SET_GAME_STATUS = (data) => {
-    return { type: 'SET_GAME_STATUS', payload: data }
-}

@@ -3,7 +3,7 @@ import './App.css';
 import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps';
 import citiesData from './data.json';
 import { useDispatch, useSelector } from 'react-redux';
-import { SET_CLICKED_POS, SET_CITY_IDX, SET_PLACED_CITIES, SET_CURRENT_KM, SET_GAME_STATUS } from './store/actions';
+import { SET_CLICKED_POS, SET_CITY_IDX, SET_PLACED_CITIES, SET_CURRENT_KM } from './store/actions';
 import getDistance from './getDistance';
 
 function Map() {
@@ -18,7 +18,7 @@ function Map() {
 
   return (
     <GoogleMap
-      defaultZoom={3}
+      defaultZoom={5}
       defaultCenter={{ lat: 52.370216, lng: 4.895168 }}
       onClick={handleClickedMap}
     />
@@ -33,13 +33,9 @@ function App() {
   const clickedPos = useSelector(state => state.clickedPos);
   const [cities, setCities] = useState(citiesData.cities);
   const placedCities = useSelector(state => state.placedCities);
-  const gameStatus = useSelector(state => state.gameStatus);
   const dispatch = useDispatch();
 
   function handleSubmit() {
-    console.log(clickedPos, '???????');
-    console.log(cities[cityIdx].position, '!!!!!!!');
-
     const dist = getDistance(cities[cityIdx].position.lat, cities[cityIdx].position.lng, clickedPos.lat, clickedPos.lng, 'K')
     if (dist < 50) {
       dispatch(SET_CITY_IDX());
