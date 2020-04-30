@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Nunito", sans-serif;
+  background: #2D3142;
+  color: #FFF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 1rem 0 0 0;
+}
+
+.desc {
+  height: 25%;
+}
+
+.status-container {
+  width: 100%;
+  height: 30%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.order {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.status-container p {
+  padding: 0.5rem 1.5rem;
+  background: #4F5D75;
+  border-radius: .5rem;
+  font-size: .8rem;
+}
+
+.map {
+  height: 65%;
+}
+
+.footer {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.submit-btn {
+  padding: 0.15rem 1.5rem;
+  background: #FFC857;
+  border-radius: .5rem;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.end-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.end-page img {
+  width: 65%;
+  margin-bottom: 2rem;
+}
+
+
+.end-page p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (min-width: 400px) {
+  .footer {
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .end-page img {
+    width: 45%;
+    margin-bottom: 2rem;
   }
 }
